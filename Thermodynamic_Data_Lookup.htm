@@ -755,22 +755,31 @@ const data_OH = [
             interpolatedRow["T"] = temperature;
             displayTable(interpolatedRow);
         }
-
-        function displayTable(rowData) {
-            let html = `<table border='1'>
-                            <tr><th>T (K)</th><th>Cp</th><th>hs</th><th>Sº</th><th>gº/RT</th><th>∆hfº</th><th>h</th></tr>
-                            <tr>
-                                <td>${rowData.T}</td>
-                                <td>${rowData.Cp.toFixed(3)}</td>
-                                <td>${rowData.hs.toFixed(3)}</td>
-                                <td>${rowData.S.toFixed(3)}</td>
-                                <td>${rowData.g.toFixed(3)}</td>
-                                <td>${rowData.hf.toFixed(3)}</td>
-                                <td>${rowData.h.toFixed(3)}</td>
-                            </tr>
-                        </table>`;
-            document.getElementById("output").innerHTML = html;
-        }
+	function displayTable(rowData) {
+	    let html = `<div class="table-container">
+	                    <table border='1'>
+	                        <tr>
+	                            <th>T (K)</th>
+	                            <th>Cp</th>
+	                            <th>hs</th>
+	                            <th>Sº</th>
+	                            <th>gº/RT</th>
+	                            <th>∆hfº</th>
+	                            <th>h</th>
+	                        </tr>
+	                        <tr>
+	                            <td>${rowData.T}</td>
+	                            <td>${rowData.Cp.toFixed(3)}</td>
+	                            <td>${rowData.hs.toFixed(3)}</td>
+	                            <td>${rowData.S.toFixed(3)}</td>
+	                            <td>${rowData.g.toFixed(3)}</td>
+	                            <td>${rowData.hf.toFixed(3)}</td>
+	                            <td>${rowData.h.toFixed(3)}</td>
+	                        </tr>
+	                 </table>
+	              </div>`;
+	    document.getElementById("output").innerHTML = html;
+	}
     </script>
 </head>
 <body>
