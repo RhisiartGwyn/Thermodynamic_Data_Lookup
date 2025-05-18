@@ -732,20 +732,28 @@ const data_OH = [
         }
 
         function displayTable(rowData) {
-            let html = `<table border='1'>
-                            <tr><th>T (K)</th><th>Cp</th><th>hs</th><th>Sº</th><th>gº/RT</th><th>∆hfº</th><th>h</th></tr>
-                            <tr>
-                                <td>${rowData.T}</td>
-                                <td>${rowData.Cp.toFixed(3)}</td>
-                                <td>${rowData.hs.toFixed(3)}</td>
-                                <td>${rowData.S.toFixed(3)}</td>
-                                <td>${rowData.g.toFixed(3)}</td>
-                                <td>${rowData.hf.toFixed(3)}</td>
-                                <td>${rowData.h.toFixed(3)}</td>
-                            </tr>
-                        </table>`;
-            document.getElementById("output").innerHTML = html;
-        }
+    // Display the temperature above the table
+    let html = `<p><strong>Temperature (K):</strong> ${rowData.T}</p>
+                <table border='1'>
+                    <tr>
+                        <th>Cp</th>
+                        <th>hs</th>
+                        <th>Sº</th>
+                        <th>gº/RT</th>
+                        <th>∆hfº</th>
+                        <th>h</th>
+                    </tr>
+                    <tr>
+                        <td>${rowData.Cp.toFixed(3)}</td>
+                        <td>${rowData.hs.toFixed(3)}</td>
+                        <td>${rowData.S.toFixed(3)}</td>
+                        <td>${rowData.g.toFixed(3)}</td>
+                        <td>${rowData.hf.toFixed(3)}</td>
+                        <td>${rowData.h.toFixed(3)}</td>
+                    </tr>
+                </table>`;
+    document.getElementById("output").innerHTML = html;
+}
     </script>
 </head>
 <body>
