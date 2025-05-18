@@ -732,26 +732,35 @@ const data_OH = [
         }
 
         function displayTable(rowData) {
-    // Display the temperature above the table
     let html = `<p><strong>Temperature (K):</strong> ${rowData.T}</p>
-                <table border='1'>
+                <div class="table-container">
+                  <table border="1">
                     <tr>
-                        <th>Cp</th>
-                        <th>hs</th>
-                        <th>Sº</th>
-                        <th>gº/RT</th>
-                        <th>∆hfº</th>
-                        <th>h</th>
+                      <th>Cp</th>
+                      <th>hs</th>
+                      <th>Sº</th>
                     </tr>
                     <tr>
-                        <td>${rowData.Cp.toFixed(3)}</td>
-                        <td>${rowData.hs.toFixed(3)}</td>
-                        <td>${rowData.S.toFixed(3)}</td>
-                        <td>${rowData.g.toFixed(3)}</td>
-                        <td>${rowData.hf.toFixed(3)}</td>
-                        <td>${rowData.h.toFixed(3)}</td>
+                      <td>${rowData.Cp.toFixed(3)}</td>
+                      <td>${rowData.hs.toFixed(3)}</td>
+                      <td>${rowData.S.toFixed(3)}</td>
                     </tr>
-                </table>`;
+                    <!-- Spacer row to create vertical separation -->
+                    <tr>
+                      <td colspan="3" style="padding-top: 15px;"></td>
+                    </tr>
+                    <tr>
+                      <th>gº/RT</th>
+                      <th>∆hfº</th>
+                      <th>h</th>
+                    </tr>
+                    <tr>
+                      <td>${rowData.g.toFixed(3)}</td>
+                      <td>${rowData.hf.toFixed(3)}</td>
+                      <td>${rowData.h.toFixed(3)}</td>
+                    </tr>
+                  </table>
+                </div>`;
     document.getElementById("output").innerHTML = html;
 }
     </script>
